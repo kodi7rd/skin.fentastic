@@ -1282,4 +1282,10 @@ msgctxt "#700068"
 msgid "Show widget menu name colored border"
 msgstr ""
 
+# Kodi CoreELEC Reboot In Power Menu - DialogButtonMenu.xml
+
+msgctxt "#700069"
+msgid "CoreELEC - Reboot to Android TV"
+msgstr ""
+
 ################################################################

@@ -20,6 +20,13 @@
 				<content>
 					<!-- KODI-RD-IL CHANGES -->
 					<item>
+						<!-- CoreELEC only - Reboot to Android TV -->
+						<label>[B][COLOR blue]$LOCALIZE[700069][/COLOR][/B]</label>
+						<onclick>System.ExecWait("/usr/sbin/rebootfromnand")</onclick>
+						<onclick>Reset()</onclick>
+						<visible>System.PathExist("/usr/sbin/rebootfromnand")</visible>
+					</item>
+					<item>
 						<label>[B][COLOR blue]$LOCALIZE[13012][/COLOR][/B]</label>
 						<!-- Original - <onclick>Quit()</onclick> -->
 						<!-- Force Close Kodi Script:  -->
@@ -30,32 +37,27 @@
 						<!-- Open Twilight Settings  -->
 						<label>[B][COLOR blue]$LOCALIZE[700050][/COLOR][/B]</label>
 						<onclick>Addon.OpenSettings(plugin.video.twilight)</onclick>
-						<visible>System.ShowExitButton</visible>
 					</item>
 					<item>
 						<!-- Open DarkSubs Settings  -->
 						<label>[B][COLOR blue]$LOCALIZE[700051][/COLOR][/B]</label>
 						<onclick>Addon.OpenSettings(service.subtitles.All_Subs)</onclick>
-						<visible>System.ShowExitButton</visible>
 					</item>
 					<item>
 						<!-- Clear Twilight Cache  -->
 						<label>[B][COLOR blue]$LOCALIZE[700052][/COLOR][/B]</label>
 						<onclick>PlayMedia(&quot;plugin://plugin.video.twilight/?mode=clear_all_cache&amp;isFolder=false&amp;iconImage=https%3A%2F%2Fi.imgur.com%2FRDNxy36.png&quot;)</onclick>
-						<visible>System.ShowExitButton</visible>
 					</item>
 					<item>
 						<!-- Clear DarkSubs Cache  -->
 						<label>[B][COLOR blue]$LOCALIZE[700053][/COLOR][/B]</label>
 						<onclick>RunScript(special://home/addons/service.subtitles.All_Subs/resources/modules/clean_cache_functions.py, clean_all_cache)</onclick>
-						<visible>System.ShowExitButton</visible>
 					</item>
 					<item>
 						<!-- Build Switch Skin  -->
 						<label>[B][COLOR blue]$LOCALIZE[700058][/COLOR][/B]</label>
 						<onclick>Dialog.Close(all)</onclick>
 						<onclick>PlayMedia(&quot;plugin://plugin.program.kodirealdebridisraelwizard/?mode=install&amp;action=build_switch_skin&quot;)</onclick>
-						<visible>System.ShowExitButton</visible>
 					</item>
 					<item>
 						<!-- KODI ANDORID/WINDOWS Update Check -->
@@ -64,7 +66,6 @@
 						<onclick>PlayMedia(&quot;plugin://plugin.program.kodirealdebridisraelwizard/?mode=install&amp;action=kodi_version_update_check&amp;kodi_version_update_check_manual=true&quot;)</onclick>
 						<!-- Android/Windows only -->
 						<visible>System.Platform.Android | System.Platform.Windows</visible>
-						<visible>System.ShowExitButton</visible>
 					</item>
 					<item>
 						<!-- Skin settings -->
